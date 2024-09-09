@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather</title>
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+
+  <div class="weather">
+    <div class="container">
+      <div class="weather__inner">
+        <div class="out">
+          <a class="logo" href="#">
+            <img src="images/logo.svg" alt="logo">
+          </a>
+          <div class="out__inner">
+            <div class="out__temp">16</div>
+            <div class="out__location">
+              <span class="out__location-city">city</span>
+            </div>
+            <div class="out__icon">
+            </div>
+          </div>
+        </div>
+        <div class="info">
+          <div class="info__inner">
+            <div class="info__search">
+              <input class="info__input" type="text" placeholder="Search Location..." value="">
+              <button class="info__btn"></button>
+            </div>
+            <p class="info__text">
+              Weather Details...
+            </p>
+            <div class="info__box">
+              <p class="info__descr">
+                thunderstorm with light drizzle
+              </p>
+              <ul class="info__list">
+                <li class="info__item">
+                  Max temp
+                  <span class="max-temp"></span>
+                </li>
+                <li class="info__item">
+                  Min temp
+                  <span class="min-temp"></span>
+                </li>
+                <li class="info__item">
+                  Humadity
+                  <span class="humadity"></span>
+                </li>
+                <li class="info__item ">
+                  Cloudy
+                  <span class="cloudy"></span>
+                </li>
+                <li class="info__item">
+                  Wind
+                  <span class="wind"></span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <script src="js/main.min.js"></script>
+</body>
+
+</html>

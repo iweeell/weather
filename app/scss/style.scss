@@ -1,0 +1,163 @@
+@import 'fonts';
+@import 'reset';
+
+body {
+  font-family: 'Roboto';
+  font-weight: 400;
+  color: #fff;
+  font-size: 18px;
+}
+
+
+.container {
+  max-width: 1230px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.weather {
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+  }
+}
+
+.out {
+  padding-top: 35px;
+  padding-bottom: 85px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+  &__inner {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  &__temp {
+    font-size: 143px;
+  }
+
+  &__location {
+    font-size: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__icon {
+    width: 70px;
+
+    & img {
+      width: 100%;
+    }
+  }
+}
+
+.info {
+  padding: 0 35px;
+  max-width: 440px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+
+  &::before {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.04);
+    border-left: 5px solid rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(9.5px);
+    width: 40%;
+    height: 100%;
+    right: 0;
+    z-index: -1;
+  }
+
+  &__inner {
+    max-width: 440px;
+    width: 100%;
+  }
+
+  &__search {
+    padding-top: 35px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 40px;
+  }
+
+  &__box {
+    border-bottom: 1px solid #fff;
+    padding-bottom: 40px;
+  }
+
+  &__input {
+    padding: 13px 0;
+    width: 100%;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.7)
+    }
+
+    &:focus {
+      outline: transparent;
+    }
+  }
+
+  &__btn {
+    background-image: url('../images/search.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    width: 44px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__text {
+    margin-bottom: 50px;
+  }
+
+  &__descr {
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 30px;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    & span {
+      display: flex;
+      align-items: center;
+
+      & img {
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+
+@import 'media';
