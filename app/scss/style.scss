@@ -118,7 +118,7 @@ body {
   }
 
   &__btn {
-    background-image: url('../images/search.svg');
+    
     background-position: center;
     background-repeat: no-repeat;
     background-size: auto;
@@ -127,6 +127,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &--search {
+      background-image: url('../images/search.svg');
+    }
+
+    &--location {
+      background-image: url('../images/location.svg');
+    }
   }
 
   &__text {

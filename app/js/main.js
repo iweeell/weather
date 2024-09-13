@@ -1,10 +1,11 @@
-const buttonSearch = document.querySelector('.info__btn');
+const buttonSearch = document.querySelector('.info__btn--search');
+const buttonLocation = document.querySelector('.info__btn--location');
 const inputSearch = document.querySelector('.info__input');
-const APIKey = 'a8a1a655f133583bc05c1575299a8ec8';
 
 function weather(e) {
-
-  fetch(e)
+  
+  const APIKey = 'a8a1a655f133583bc05c1575299a8ec8';
+  fetch(`https://api.openweathermap.org/data/2.5/weather?${e}&units=metric&appid=${APIKey}`)
     .then(response => response.json())
     .then(data => {
       const cityName = document.querySelector('.out__location-city');
@@ -37,18 +38,13 @@ function weather(e) {
 function getLocatin() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
-  } else {
-    inputSearch.value = 'Kyiv';
-    buttonSearch.click();
   }
 }
 
 function showPosition(position) {
   const lat = position.coords.latitude;
   const lon = position.coords.longitude;
-  const city = `lat=${lat}&lon=${lon}`
-
-  weather(`https://api.openweathermap.org/data/2.5/weather?${city}&units=metric&appid=${APIKey}`)
+    weather(`lat=${lat}&lon=${lon}`)
 
 }
 
@@ -57,7 +53,13 @@ buttonSearch.addEventListener('click', () => {
   if (city === '') {
     return
   }
-  weather(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`);
+  weather(`q=${city}`);
+
+  inputSearch.value = '';
+})
+
+buttonLocation.addEventListener('click', () => {
+  getLocatin()
 })
 
 inputSearch.addEventListener('keyup', (el) => {
@@ -67,6 +69,8 @@ inputSearch.addEventListener('keyup', (el) => {
 })
 
 window.addEventListener('load', () => {
-  getLocatin();
+  buttonSearch.click()
 })
+
+
 
